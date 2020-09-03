@@ -7,29 +7,29 @@ pipeline {
       }
     }
 
-    stage('Tx_Api') {
+    stage('Tx_Automation') {
       parallel {
         stage('Tx_Api') {
           steps {
-            build 'RunAutomationTests_API'
+            build '2 RunAutomationTests_API'
           }
         }
 
         stage('Tx_Web') {
           steps {
-            build 'RunAutomationTests_Web'
+            build '3 RunAutomationTests_Web'
           }
         }
 
         stage('Tx_Mobile') {
           steps {
-            build 'RunAutomationTests_Mobile'
+            build '4 RunAutomationTests_Mobile'
           }
         }
 
         stage('Performance ') {
           steps {
-            build 'Performance_Tests'
+            build '5 Performance_Tests'
           }
         }
 
@@ -38,7 +38,7 @@ pipeline {
 
     stage('SonarQube') {
       steps {
-        build 'RunAutomationTests_SonarQube'
+        build '6 RunAutomationTests_SonarQube'
       }
     }
 
