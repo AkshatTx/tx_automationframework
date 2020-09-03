@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Git') {
       steps {
-        build '1 RunDevelopmentProjectBuilduild'
+        build '1 RunDevelopmentProjectBuild'
       }
     }
 
