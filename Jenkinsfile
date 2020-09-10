@@ -33,12 +33,12 @@ pipeline {
           }
         }
 
-      }
-    }
+        stage('SonarQube') {
+          steps {
+            build '6 RunAutomationTests_SonarQube'
+          }
+        }
 
-    stage('SonarQube') {
-      steps {
-        build '6 RunAutomationTests_SonarQube'
       }
     }
 
